@@ -40,6 +40,25 @@ mod tests {
         assert_eq!(a.sign, 0);
         assert_eq!(a.m.capacity(), 256);
         assert_eq!(a.m.len(), 256);
-        assert_eq!(a.m[0], 0)
+        assert_eq!(a.m[0], 0);
+    }
+
+    #[test]
+    fn set_test() {
+        let mut a = BigNum::new();
+        a.set(0);
+        assert_eq!(a.len, 1);
+        assert_eq!(a.sign, 0);
+        assert_eq!(a.m[0], 0);
+
+        a.set(-1);
+        assert_eq!(a.len, 1);
+        assert_eq!(a.sign, -1);
+        assert_eq!(a.m[0], 1);
+
+        a.set(1);
+        assert_eq!(a.len, 1);
+        assert_eq!(a.sign, 1);
+        assert_eq!(a.m[0], 1);
     }
 }
